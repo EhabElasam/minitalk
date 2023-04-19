@@ -70,9 +70,9 @@ OBJECTSB = ${SRCB:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): all
+all: $(NAME)
 
-all:
+$(NAME):
 	cc -c $(CFLAGS) $(SRC)
 	ar -rcs $(NAME) $(OBJECTS)
 
@@ -80,10 +80,10 @@ bonus:
 	cc -c $(CFLAGS) $(SRCB)
 	ar -rcs $(NAME) $(OBJECTSB)
 
-re: fclean all
 
 clean:
 	rm -f $(OBJECTS) $(OBJECTSB)
 fclean: clean
 	rm -f $(NAME)
+re: fclean all
 

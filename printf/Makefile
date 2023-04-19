@@ -24,9 +24,9 @@ OBJECTS = ${SRC:.c=.o}
 
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): all
+all: $(NAME)
 
-all:
+$(NAME):
 	cc -c $(CFLAGS) $(SRC)
 	ar -rcs $(NAME) $(OBJECTS)
 
